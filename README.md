@@ -1,1 +1,199 @@
-# acayarobintoot-pixel.gifthub.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> DIABLO'S HIDDEN TAVERN
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#08090b; --panel:#111317; --panel2:#17191e; --red:#e43d32;
+      --red2:#ff6048; --gold:#d9a441; --text:#f4f4f2; --muted:#9b9da5;
+      --border:rgba(255,255,255,.08); --shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at 80% 5%,rgba(228,61,50,.13),transparent 28%),var(--bg);color:var(--text);min-height:100vh}
+    a{text-decoration:none;color:inherit}
+    button,input{font:inherit}
+    header{position:sticky;top:0;z-index:50;background:rgba(8,9,11,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    .nav{max-width:1180px;margin:auto;height:74px;padding:0 22px;display:flex;align-items:center;gap:30px}
+    .logo{font-family:Rajdhani,sans-serif;font-size:27px;font-weight:700;letter-spacing:1.5px}
+    .logo span{color:var(--red2)}
+    .navlinks{display:flex;gap:24px;margin-left:auto}
+    .navlinks a{font-size:14px;color:#c6c7cb;transition:.2s}
+    .navlinks a:hover{color:#fff}
+    .cart-btn{border:1px solid var(--border);background:#15171b;color:#fff;padding:10px 15px;border-radius:9px;cursor:pointer}
+    .cart-count{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:6px;background:var(--red);border-radius:50%;font-size:11px}
+    .hero{max-width:1180px;margin:auto;min-height:570px;padding:95px 22px 80px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px}
+    .eyebrow{color:var(--red2);font-weight:800;letter-spacing:3px;font-size:12px;margin-bottom:17px}
+    h1{font-family:Rajdhani,sans-serif;font-size:clamp(54px,7vw,88px);line-height:.88;text-transform:uppercase;max-width:650px}
+    h1 span{color:var(--red2)}
+    .hero p{color:var(--muted);line-height:1.7;max-width:570px;margin:24px 0 30px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{border:0;border-radius:9px;padding:13px 20px;font-weight:800;cursor:pointer;transition:.2s}
+    .btn-primary{background:linear-gradient(135deg,var(--red2),#b92c25);color:#fff;box-shadow:0 8px 25px rgba(228,61,50,.22)}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .btn-ghost{background:#17191e;border:1px solid var(--border);color:#fff}
+    .hero-art{height:370px;border-radius:22px;position:relative;overflow:hidden;background:linear-gradient(145deg,#181a1f,#08090b);border:1px solid var(--border);box-shadow:var(--shadow)}
+    .hero-art:before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 20deg,transparent 0 22%,rgba(228,61,50,.75),transparent 43% 68%,rgba(217,164,65,.3),transparent 80%);filter:blur(25px);animation:spin 12s linear infinite}
+    .sigil{position:absolute;inset:12%;display:grid;place-items:center;border:1px solid rgba(228,61,50,.25);border-radius:50%;box-shadow:inset 0 0 80px rgba(228,61,50,.08)}
+    .sigil:after{content:"N";font-family:Rajdhani;font-size:180px;font-weight:700;color:rgba(255,255,255,.035);text-shadow:0 0 40px rgba(228,61,50,.4)}
+    .hero-badge{position:absolute;bottom:22px;left:22px;background:rgba(8,9,11,.8);border:1px solid var(--border);padding:13px 16px;border-radius:10px;backdrop-filter:blur(10px)}
+    .hero-badge strong{display:block}.hero-badge small{color:var(--muted)}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    section{max-width:1180px;margin:auto;padding:65px 22px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:25px}
+    .section-head h2{font-family:Rajdhani;font-size:38px;text-transform:uppercase}
+    .section-head p{color:var(--muted);font-size:14px}
+    .toolbar{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+    .search{flex:1;min-width:220px;background:#111317;border:1px solid var(--border);color:#fff;border-radius:9px;padding:13px 15px;outline:none}
+    .search:focus{border-color:rgba(228,61,50,.65)}
+    .filter{background:#111317;border:1px solid var(--border);color:#ddd;padding:12px 15px;border-radius:9px;cursor:pointer}
+    .filter.active{background:rgba(228,61,50,.15);border-color:rgba(228,61,50,.6);color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+    .card{background:linear-gradient(180deg,#15171b,#101114);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.25s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(228,61,50,.4);box-shadow:0 14px 40px rgba(0,0,0,.35)}
+    .product-img{height:185px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 40%,rgba(228,61,50,.25),transparent 50%),#0c0d0f}
+    .product-img .icon{font-size:64px;filter:drop-shadow(0 0 18px rgba(228,61,50,.35))}
+    .tag{position:absolute;top:12px;left:12px;background:var(--red);padding:5px 8px;border-radius:5px;font-size:10px;font-weight:800;text-transform:uppercase}
+    .info{padding:16px}.info h3{font-size:15px;margin-bottom:7px}.info p{font-size:12px;color:var(--muted);min-height:34px;line-height:1.4}
+    .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:15px}.price{font-weight:800;color:#fff}.buy{background:#22252b;border:1px solid var(--border);color:#fff;border-radius:7px;padding:8px 11px;font-weight:700;cursor:pointer}.buy:hover{background:var(--red)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:24px;background:#111317;border:1px solid var(--border);border-radius:13px}.feature b{display:block;margin-bottom:8px}.feature p{font-size:13px;line-height:1.6;color:var(--muted)}
+    footer{border-top:1px solid var(--border);margin-top:30px}.footer{max-width:1180px;margin:auto;padding:35px 22px;display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}.modal.open{display:flex}
+    .modal-box{width:min(500px,100%);background:#121419;border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow)}.modal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.close{background:none;border:0;color:#aaa;font-size:24px;cursor:pointer}
+    .cart-items{max-height:330px;overflow:auto}.cart-item{display:flex;justify-content:space-between;gap:15px;padding:13px 0;border-bottom:1px solid var(--border)}.cart-item small{color:var(--muted)}.remove{border:0;background:none;color:#e57368;cursor:pointer}
+    .total{display:flex;justify-content:space-between;padding:18px 0;font-weight:800;font-size:18px}.empty{text-align:center;color:var(--muted);padding:35px 0}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.hero-art{height:300px}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.nav{height:64px}.navlinks{display:none}.hero{padding-top:65px}.grid{grid-template-columns:1fr}.features{grid-template-columns:1fr}.footer{flex-direction:column;gap:10px}.section-head{display:block}.section-head p{margin-top:7px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="logo" href="#">INFERNO <span>NEXUS</span></a>
+    <div class="navlinks"><a href="#shop">Shop</a><a href="#features">Why Us</a><a href="#about">About</a></div>
+    <button class="cart-btn" id="cartOpen">Cart <span class="cart-count" id="cartCount">0</span></button>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">DOTA-INSPIRED GAMING STORE</div>
+      <h1>ENTER THE <span>BATTLE.</span></h1>
+      <p>Premium gaming gear and Dota-inspired merchandise for players who want their setup to look as powerful as their game.</p>
+      <div class="actions"><a class="btn btn-primary" href="#shop">Shop Collection</a><a class="btn btn-ghost" href="#features">Explore</a></div>
+    </div>
+    <div class="hero-art"><div class="sigil"></div><div class="hero-badge"><strong>SEASON DROP // 2026</strong><small>Limited gaming collection</small></div></div>
+  </div>
+
+  <section id="shop">
+    <div class="section-head"><div><h2>Featured Gear</h2><p>Equip your setup for the next match.</p></div></div>
+    <div class="toolbar">
+      <input class="search" id="search" placeholder="Search products...">
+      <button class="filter active" data-cat="all">All</button>
+      <button class="filter" data-cat="apparel">Apparel</button>
+      <button class="filter" data-cat="gear">Gear</button>
+      <button class="filter" data-cat="accessories">Accessories</button>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </section>
+
+  <section id="features">
+    <div class="section-head"><div><h2>Built For Gamers</h2><p>A clean store experience for your gaming collection.</p></div></div>
+    <div class="features">
+      <div class="feature"><b>⚔ Premium Collection</b><p>Curated gaming products with a dark, battle-ready aesthetic.</p></div>
+      <div class="feature"><b>🔥 Fast Checkout</b><p>Add products to your cart and review your order instantly.</p></div>
+      <div class="feature"><b>🛡 Secure Experience</b><p>This demo keeps your cart in your browser and does not collect payment details.</p></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-head"><div><h2>About Inferno Nexus</h2><p>A fictional storefront template inspired by competitive gaming.</p></div></div>
+  </section>
+</main>
+
+<footer><div class="footer"><span>© 2026 Inferno Nexus. Fan-inspired demo store.</span><span>Not affiliated with Valve or Dota 2.</span></div></footer>
+
+<div class="modal" id="cartModal">
+  <div class="modal-box">
+    <div class="modal-top"><h2>Your Cart</h2><button class="close" id="cartClose">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="total"><span>Total</span><span id="cartTotal">₱0</span></div>
+    <button class="btn btn-primary" style="width:100%" id="checkout">Proceed to Checkout</button>
+  </div>
+</div>
+
+<script>
+const products = [
+  {id:1,name:"Inferno Battle Hoodie",cat:"apparel",price:1499,icon:"🧥",tag:"New",desc:"Heavyweight black gaming hoodie."},
+  {id:2,name:"Ancient Gaming Mouse",cat:"gear",price:2199,icon:"🖱️",tag:"Hot",desc:"RGB precision mouse for ranked nights."},
+  {id:3,name:"Red Core Keycap Set",cat:"accessories",price:899,icon:"⌨️",tag:"Drop",desc:"Mechanical keyboard keycap collection."},
+  {id:4,name:"Nexus Arena Mousepad",cat:"gear",price:799,icon:"▰",tag:"",desc:"Extended desk mat with stitched edges."},
+  {id:5,name:"Battlefield Cap",cat:"apparel",price:649,icon:"🧢",tag:"",desc:"Minimal black embroidered cap."},
+  {id:6,name:"Fire Sigil Desk Light",cat:"accessories",price:1299,icon:"🔴",tag:"New",desc:"Ambient red light for your setup."},
+  {id:7,name:"Ranked Warrior Tee",cat:"apparel",price:699,icon:"👕",tag:"",desc:"Soft cotton gaming graphic tee."},
+  {id:8,name:"Demon Edge Headset",cat:"gear",price:2899,icon:"🎧",tag:"Hot",desc:"Immersive audio with a deep bass profile."}
+];
+
+let cart = JSON.parse(localStorage.getItem("infernoCart") || "[]");
+let category = "all";
+
+const grid = document.getElementById("productGrid");
+const search = document.getElementById("search");
+
+function peso(n){ return "₱" + n.toLocaleString("en-PH"); }
+
+function renderProducts(){
+  const q = search.value.toLowerCase().trim();
+  const shown = products.filter(p => (category==="all" || p.cat===category) &&
+    (p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)));
+  grid.innerHTML = shown.length ? shown.map(p => `
+    <article class="card">
+      <div class="product-img"><span class="icon">${p.icon}</span>${p.tag?`<span class="tag">${p.tag}</span>`:""}</div>
+      <div class="info"><h3>${p.name}</h3><p>${p.desc}</p>
+        <div class="price-row"><span class="price">${peso(p.price)}</span><button class="buy" onclick="addToCart(${p.id})">Add to Cart</button></div>
+      </div>
+    </article>`).join("") : '<p style="grid-column:1/-1;color:#999;padding:30px 0">No products found.</p>';
+}
+
+function addToCart(id){
+  const existing = cart.find(x=>x.id===id);
+  if(existing) existing.qty++;
+  else cart.push({id,qty:1});
+  saveCart();
+  document.getElementById("cartModal").classList.add("open");
+  renderCart();
+}
+function saveCart(){localStorage.setItem("infernoCart",JSON.stringify(cart));}
+function renderCart(){
+  const items = document.getElementById("cartItems");
+  document.getElementById("cartCount").textContent = cart.reduce((s,x)=>s+x.qty,0);
+  if(!cart.length){items.innerHTML='<div class="empty">Your cart is empty.</div>';document.getElementById("cartTotal").textContent=peso(0);return;}
+  let total=0;
+  items.innerHTML=cart.map(x=>{
+    const p=products.find(y=>y.id===x.id), sub=p.price*x.qty; total+=sub;
+    return `<div class="cart-item"><div><strong>${p.name}</strong><br><small>${peso(p.price)} × ${x.qty}</small></div><button class="remove" onclick="removeItem(${p.id})">Remove</button></div>`;
+  }).join("");
+  document.getElementById("cartTotal").textContent=peso(total);
+}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);saveCart();renderCart();}
+
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active"); category=b.dataset.cat; renderProducts();
+}));
+search.addEventListener("input",renderProducts);
+document.getElementById("cartOpen").onclick=()=>{document.getElementById("cartModal").classList.add("open");renderCart()};
+document.getElementById("cartClose").onclick=()=>document.getElementById("cartModal").classList.remove("open");
+document.getElementById("cartModal").addEventListener("click",e=>{if(e.target.id==="cartModal")e.currentTarget.classList.remove("open")});
+document.getElementById("checkout").onclick=()=>alert(cart.length ? "Demo checkout: connect your payment provider here." : "Your cart is empty.");
+renderProducts(); renderCart();
+</script>
+</body>
+</html>
